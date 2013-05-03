@@ -46,7 +46,7 @@ class JellyBean < Dessert
 		@flavor = flavor
 	end
 end
-
+puts self.inspect
 jelly = JellyBean.new("jelly",10,"someFlavor")
 puts jelly.get_calories
 puts jelly.get_name
