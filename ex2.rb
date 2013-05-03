@@ -15,7 +15,7 @@ def rps_game_winner(game)
   end
   return player1
 end
-
+ 
 def jogada_valida(game)
   jogada_player1 = game[0][1]
   jogada_player2 = game[1][1]
