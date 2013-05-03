@@ -1,8 +1,8 @@
 class Class
 	def attr_accessor_with_history(attr_name)
-		attr_name = attr_name.to_s			# make sure it's a string
-		attr_reader attr_name				# create the attribute's getter
-		attr_reader attr_name+"_history" 	# create bar_history getter
+		attr_name = attr_name.to_s
+		attr_reader attr_name
+		attr_reader attr_name+"_history"
 		class_eval %Q/
 			def #{attr_name}=(value)
 				@#{attr_name} = value
@@ -21,4 +21,3 @@ f = Foo.new
 f.teste = 1
 f.teste = 2
 puts f.teste_history
-#f.bar_history # => if your code works, should be [nil,1,2]
