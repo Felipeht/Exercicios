@@ -12,22 +12,24 @@ class Dessert
 		return true
 	end
 
-	def get_name
+	def name
 		return @name
 	end
 
-	def get_calories
+	def calories
+		self
 		return @calories
 	end
 
-	def set_calories(calories)
+	def calories= (calories)
 		@calories = calories
 	end
 
-	def set_name(name)
+	def name= (name)
 		@name = name
 	end
 end
+
 class JellyBean < Dessert
 	def initialize(name, calories, flavor)
 		super(name,calories)
@@ -38,27 +40,27 @@ class JellyBean < Dessert
 		@flavor != "black licorice"
 	end
 
-	def get_flavor
+	def flavor
 		return @flavor
 	end
 
-	def set_flavor(flavor)
+	def flavor= (flavor)
 		@flavor = flavor
 	end
 end
-puts self.inspect
+
 jelly = JellyBean.new("jelly",10,"someFlavor")
-puts jelly.get_calories
-puts jelly.get_name
-puts jelly.get_flavor
+puts jelly.calories
+puts jelly.name
+puts jelly.flavor
 puts jelly.delicious?
 puts jelly.healthy?
 puts "\nSetando novamente"
-jelly.set_calories(2010)
-jelly.set_name("outronome")
-jelly.set_flavor("black licorice")
-puts jelly.get_calories
-puts jelly.get_name
-puts jelly.get_flavor
+jelly.calories= 2010
+jelly.name= "outronome"
+jelly.flavor= "black licorice"
+puts jelly.calories
+puts jelly.name
+puts jelly.flavor
 puts jelly.delicious?
 puts jelly.healthy?
