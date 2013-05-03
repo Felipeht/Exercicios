@@ -16,15 +16,16 @@ def jogada_valida(game)
 	((game[0][1] == "R" || game[0][1] == "P" || game[0][1] == "S") && (game[1][1] == "R" || game[1][1] == "P" || game[1][1] == "S"))
 end
 
+def rps_tournament_winner(torneio)
+	if(torneio[0][0].class == Array)
+		torneio[0] = rps_tournament_winner(torneio[0])
+	end
+	if(torneio[1][0].class == Array)
+		torneio[1] = rps_tournament_winner(torneio[1])
+	end
+	rps_game_winner(torneio)
+end
+
 jogo = [[[ ["Armando", "P"], ["Dave", "S"] ],[ ["Richard", "R"], ["Michael", "S"] ],],
 [[ ["Allen", "S"], ["Omer", "P"] ],[ ["David E.", "R"], ["Richard X.", "P"] ]]]
-
-def rps_tournament_winner(torneio)
-	num_rodada = 0
-	torneio.each do |rodada|
-		novo_torneio[(num_rodada/2).floor] = rps_game_winner(rodada)
-		num_rodada=num_rodada+1
-	end
-
-	rps_tournament_winner(novo_torneio)
-end
+puts rps_tournament_winner(jogo)
